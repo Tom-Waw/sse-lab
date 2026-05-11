@@ -1,0 +1,28 @@
+site_name: Software Systems Engineering Lab
+site_description: Designing, testing, measuring, and evolving production-inspired distributed systems.
+repo_name: sse-lab
+repo_url: https://github.com/Tom-Waw/sse-lab
+
+docs_dir: src
+site_dir: site
+
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+
+nav:
+  - Home: index.md
+  - Architecture Decision Records:
+      - Overview: adr/index.md
+      - "0001: Use a Monorepo": adr/0001-use-a-monorepo.md
+
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
