@@ -14,9 +14,9 @@ The goal is to design and evolve a realistic system through measurable engineeri
 
 ## Documentation
 
-The project documentation lives in [`docs/src/`](docs/src/index.md).
+The published documentation site is available through [GitHub Pages](https://tom-waw.github.io/sse-lab/).
 
-The published documentation site is available through GitHub Pages.
+The documentation source lives in [`docs/src/`](docs/src/index.md).
 
 ## Repository Status
 
