@@ -61,13 +61,14 @@ These artifacts should remain lightweight and useful. They should guide the engi
 
 ## Documentation Areas
 
+- [Project Management](project/index.md) documents project vision, scope, and planning artifacts.
 - [Architecture Decision Records](adr/index.md) document important technical and architectural decisions.
 
 Future documentation areas may include:
 
-- project vision and scope;
 - stakeholder analysis;
 - requirements engineering notes;
 - architecture overview;
+- experiment reports;
 - operational runbooks;
 - benchmark results.
