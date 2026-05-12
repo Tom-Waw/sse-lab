@@ -1,10 +1,13 @@
 # Contributing
 
-`sse-lab` is developed as a long-lived project. Contributions should be small, reviewable, and intentional.
+`sse-lab` is developed as a long-lived software systems engineering lab. Contributions should be small, reviewable, intentional, and aligned with the project’s purpose as a portfolio-quality engineering system.
+
+The repository should demonstrate disciplined software engineering, not only feature delivery.
 
 ## Development Principles
 
 - Prefer simple, understandable solutions before introducing complexity.
+- Avoid premature abstraction and premature service extraction.
 - Keep changes focused and easy to review.
 - Document architectural decisions when they matter.
 - Add or update tests for meaningful behavior changes.
@@ -37,6 +40,7 @@ Before merging, changes should ideally:
 - Pass relevant tests.
 - Include documentation updates where appropriate.
 - Explain trade-offs for architectural or infrastructure changes.
+- Keep the scope small enough to review confidently.
 
 ## Documentation
 
@@ -44,12 +48,15 @@ Documentation is part of the product.
 
 Use documentation to explain:
 
+- Project purpose, scope and requirements
 - System boundaries
 - Architectural decisions
 - Operational assumptions
 - Experiment design
 - Performance measurements
 - Trade-offs and limitations
+
+Documentation should be useful to future contributors, reviewers, and interviewers. Avoid documentation that does not help explain or improve the system.
 
 ## Security
 

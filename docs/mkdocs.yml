@@ -18,7 +18,8 @@ nav:
   - Home: index.md
   - Architecture Decision Records:
       - Overview: adr/index.md
-      - "0001: Use a Monorepo": adr/0001-use-a-monorepo.md
+      - "ADR 0001: Use a Monorepo": adr/0001-use-a-monorepo.md
+      - "ADR 0002: Select Hospitality Operations as Initial System Domain": adr/0002-select-initial-system-domain.md
 
 markdown_extensions:
   - admonition

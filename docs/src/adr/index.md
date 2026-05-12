@@ -1,10 +1,17 @@
 # Architecture Decision Records
 
-ADRs document decisions that shape the system architecture, development workflow, infrastructure, or long-term maintainability of the project.
+Architecture Decision Records document decisions that shape the system architecture, development workflow, infrastructure, project direction, or long-term maintainability.
 
 Each ADR should explain:
 
-- The context of the decision
-- The decision that was made
-- The consequences and trade-offs
-- The current status of the decision
+- the context of the decision;
+- the decision that was made;
+- the consequences and trade-offs;
+- the current status of the decision.
+
+ADRs should be concise but specific enough that a future reader can understand why the decision was made.
+
+## Records
+
+- [ADR 0001: Use a Monorepo](0001-use-a-monorepo.md)
+- [ADR 0002: Select Hospitality Operations as Initial System Domain](0002-select-initial-system-domain.md)
