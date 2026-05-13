@@ -66,7 +66,6 @@ These artifacts should remain lightweight and useful. They should guide the engi
 
 Future documentation areas may include:
 
-- stakeholder analysis;
 - requirements engineering notes;
 - architecture overview;
 - experiment reports;

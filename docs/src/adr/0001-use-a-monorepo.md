@@ -12,7 +12,7 @@ These parts are closely related and should evolve together. The repository shoul
 
 ## Decision
 
-Use a monorepo for `sse-lab`.
+Use a monorepo for the project.
 
 The repository will keep related services, applications, infrastructure, documentation, experiments, and supporting tooling in a single version-controlled workspace.
 

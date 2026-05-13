@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This document defines the initial scope boundaries for `sse-lab`.
+This document defines the initial scope boundaries.
 
 The scope is intentionally limited. The project uses hospitality operations as a realistic engineering domain, but it does not attempt to build a complete hotel management product.
 

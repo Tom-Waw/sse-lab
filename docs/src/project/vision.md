@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This document defines the guiding vision for `sse-lab`.
+This document defines the guiding vision for the repository.
 
 The vision explains what the project is trying to demonstrate, why the selected domain is useful, and what kind of engineering maturity the repository should communicate.
 
