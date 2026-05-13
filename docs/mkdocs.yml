@@ -21,6 +21,7 @@ nav:
       - Vision: project/vision.md
       - Scope: project/scope.md
       - Stakeholder Analysis: project/stakeholder-analysis.md
+      - Requirements Engineering: project/requirements-engineering.md
   - Architecture Decision Records:
       - Overview: adr/index.md
       - "ADR 0001: Use a Monorepo": adr/0001-use-a-monorepo.md
