@@ -12,12 +12,13 @@ The goal is not to create heavyweight process documentation. The goal is to make
 - [Scope](scope.md)
 - [Stakeholder Analysis](stakeholder-analysis.md)
 - [Requirements Engineering](requirements-engineering.md)
+- [Interviews](interviews/index.md)
 
 ## Planned Artifacts
 
 Future project-management artifacts may include:
 
-- interview guides and generalized interview notes;
+- generalized interview notes;
 - roadmap and milestones;
 - risk and assumptions log;
 - quality plan.

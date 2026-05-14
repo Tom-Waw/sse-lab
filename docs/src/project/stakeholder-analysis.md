@@ -25,10 +25,10 @@ Primary domain stakeholders represent the core operational workflows that the sy
 
 | Stakeholder            | Main interest                                                                               |
 | ---------------------- | ------------------------------------------------------------------------------------------- |
-| Reception staff        | Fast and correct booking, availability, check-in, check-out, and room status information    |
+| Front Office staff     | Fast and correct booking, availability, check-in, check-out, and room status information    |
 | Housekeeping staff     | Clear tasks, priorities, room readiness status, and manageable workload                     |
 | Night shift staff      | No-show handling, late arrivals, daily reconciliation, and reporting across date boundaries |
-| Operations coordinator | Coordination across reception, housekeeping, maintenance, and management                    |
+| Operations coordinator | Coordination across front office, housekeeping, maintenance, and management                 |
 | Hotel management       | Occupancy, staffing, operational bottlenecks, reporting, and service quality                |
 | Guests                 | Correct booking, smooth arrival, room readiness, and reliable service                       |
 
@@ -38,7 +38,7 @@ Secondary stakeholders may be relevant for early discovery, but they should not 
 
 | Stakeholder               | Main interest                                                                                           |
 | ------------------------- | ------------------------------------------------------------------------------------------------------- |
-| Group reservations / Resa | Group bookings, room blocks, email-driven requests, booking changes, and coordination with front office |
+| Group reservations        | Group bookings, room blocks, email-driven requests, booking changes, and coordination with front office |
 | Maintenance staff         | Rooms out of service, repair tasks, and impact on availability                                          |
 | Staff scheduler           | Shift planning, workload balance, staff availability, and assignment constraints                        |
 | Revenue manager           | Occupancy, pricing, forecasting, and overbooking strategy                                               |
@@ -74,14 +74,14 @@ This classification helps decide how much each stakeholder perspective should in
 | Stakeholder                  |      Interest |     Influence | Engagement approach                                                                   |
 | ---------------------------- | ------------: | ------------: | ------------------------------------------------------------------------------------- |
 | Maintainer / portfolio owner |          High |          High | Drives project direction, scope, quality bar, and prioritization                      |
-| Reception staff              |          High |        Medium | Core workflow perspective for booking, availability, and room state                   |
+| Front Office staff           |          High |        Medium | Core workflow perspective for booking, availability, and room state                   |
 | Housekeeping staff           |          High |        Medium | Core workflow perspective for room readiness and task flow                            |
 | Hotel management             |          High |        Medium | Provides reporting, staffing, and operational visibility concerns                     |
 | Senior engineer reviewers    |          High |        Medium | Require visible architecture reasoning, trade-offs, and measurements                  |
 | System operator              |          High |        Medium | Drives observability, deployment, reliability, and runbook concerns                   |
 | Operations coordinator       |        Medium |        Medium | Connects cross-team workflow and escalation concerns                                  |
 | Night shift staff            |        Medium |        Medium | Introduces reconciliation, scheduled jobs, date boundaries, and reporting concerns    |
-| Group reservations / Resa    |        Medium |        Medium | Important for understanding group bookings, room blocks, and availability assumptions |
+| Group reservations           |        Medium |        Medium | Important for understanding group bookings, room blocks, and availability assumptions |
 | Recruiters / hiring managers |        Medium |        Medium | Need clear project story, accessible README, and understandable demo value            |
 | Future contributors          |        Medium |           Low | Need documentation, local setup, tests, and contribution guidance                     |
 | Demo users                   |        Medium |           Low | Need a fast path to understand and inspect the system                                 |
@@ -98,19 +98,19 @@ This classification helps decide how much each stakeholder perspective should in
 
 Stakeholder relationships reveal where requirements and architecture trade-offs are likely to appear.
 
-| Relationship                                     | Tension or coordination need                                                                                       | Engineering implication                                                        |
-| ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| Reception staff ↔ Guests                         | Guests expect fast check-in and correct booking information; reception needs reliable availability and room status | Booking correctness, fast availability search, clear room state model          |
-| Group reservations / Resa ↔ Reception staff      | Group bookings and changes affect availability, room planning, and guest arrival preparation                       | Reservation holds, room blocks, booking state model, availability assumptions  |
-| Reception staff ↔ Housekeeping staff             | Reception needs rooms ready; housekeeping needs realistic priorities and workload visibility                       | Room lifecycle states, housekeeping task workflow, operational dashboard       |
-| Reception staff ↔ Night audit staff              | Late arrivals, no-shows, and date-boundary operations must be handled consistently                                 | Scheduled jobs, booking state transitions, audit trail, reconciliation reports |
-| Housekeeping staff ↔ Operations coordinator      | Tasks may need reprioritization during high occupancy or staff shortages                                           | Task prioritization, reassignment, workflow visibility                         |
-| Operations coordinator ↔ Maintenance staff       | Rooms may become unavailable and affect bookings, housekeeping, and room readiness                                 | Out-of-service states, availability impact, operational events                 |
-| Hotel management ↔ Operational staff             | Management wants efficiency and visibility; staff need realistic workload and clear instructions                   | Reporting, workload metrics, task status, escalation paths                     |
-| Maintainer ↔ Portfolio reviewers                 | The project must be feasible for one engineer but still show senior-level engineering depth                        | Small increments, ADRs, experiment reports, clear scope boundaries             |
-| System operator ↔ Developers                     | Operational issues must be diagnosable and recoverable                                                             | Structured logs, metrics, traces, health checks, runbooks                      |
-| Data/privacy stakeholder ↔ Requirements analysis | Requirements should be realistic without exposing confidential or personal data                                    | Generalized findings, synthetic data, privacy boundaries                       |
-| Architecture goals ↔ Scope control               | Advanced architecture is valuable, but overbuilding weakens focus                                                  | Naive-first implementation, feature flags, measurable improvements             |
+| Relationship                                     | Tension or coordination need                                                                                          | Engineering implication                                                        |
+| ------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| Front Office staff ↔ Guests                      | Guests expect fast check-in and correct booking information; front office needs reliable availability and room status | Booking correctness, fast availability search, clear room state model          |
+| Group reservations ↔ Front Office staff          | Group bookings and changes affect availability, room planning, and guest arrival preparation                          | Reservation holds, room blocks, booking state model, availability assumptions  |
+| Front Office staff ↔ Housekeeping staff          | Front Office needs rooms ready; housekeeping needs realistic priorities and workload visibility                       | Room lifecycle states, housekeeping task workflow, operational dashboard       |
+| Front Office staff ↔ Night shift staff           | Late arrivals, no-shows, and date-boundary operations must be handled consistently                                    | Scheduled jobs, booking state transitions, audit trail, reconciliation reports |
+| Housekeeping staff ↔ Operations coordinator      | Tasks may need reprioritization during high occupancy or staff shortages                                              | Task prioritization, reassignment, workflow visibility                         |
+| Operations coordinator ↔ Maintenance staff       | Rooms may become unavailable and affect bookings, housekeeping, and room readiness                                    | Out-of-service states, availability impact, operational events                 |
+| Hotel management ↔ Operational staff             | Management wants efficiency and visibility; staff need realistic workload and clear instructions                      | Reporting, workload metrics, task status, escalation paths                     |
+| Maintainer ↔ Portfolio reviewers                 | The project must be feasible for one engineer but still show senior-level engineering depth                           | Small increments, ADRs, experiment reports, clear scope boundaries             |
+| System operator ↔ Developers                     | Operational issues must be diagnosable and recoverable                                                                | Structured logs, metrics, traces, health checks, runbooks                      |
+| Data/privacy stakeholder ↔ Requirements analysis | Requirements should be realistic without exposing confidential or personal data                                       | Generalized findings, synthetic data, privacy boundaries                       |
+| Architecture goals ↔ Scope control               | Advanced architecture is valuable, but overbuilding weakens focus                                                     | Naive-first implementation, feature flags, measurable improvements             |
 
 ## Project Implications
 

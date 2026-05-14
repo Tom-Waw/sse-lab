@@ -39,31 +39,6 @@ Requirements must not be based on:
 - real guest or employee data;
 - reverse-engineered vendor behavior.
 
-## Confidentiality and Generalization
-
-Real-world input must be generalized before it appears in the repository.
-
-The repository must not contain:
-
-- hotel names;
-- employer names;
-- employee or guest names;
-- screenshots of real systems;
-- vendor-specific details;
-- proprietary workflows;
-- sensitive operational details.
-
-The expected transformation is:
-
-```text
-real-world input
-→ generalized finding
-→ requirement candidate
-→ scoped project work
-```
-
-Only the generalized finding and later artifacts belong in the public repository.
-
 ## Requirements Workflow
 
 Requirements should follow a lightweight workflow:

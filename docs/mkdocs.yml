@@ -22,6 +22,14 @@ nav:
       - Scope: project/scope.md
       - Stakeholder Analysis: project/stakeholder-analysis.md
       - Requirements Engineering: project/requirements-engineering.md
+      - Interviews:
+          - Overview: project/interviews/index.md
+          - "0001: Front Office": project/interviews/0001-front-office.md
+          - "0002: Housekeeping": project/interviews/0002-housekeeping.md
+          - "0003: Night Shift": project/interviews/0003-night-shift.md
+          - "0004: Group Reservations": project/interviews/0004-group-reservations.md
+          - "0005: Food & Beverage / Cross-Department": project/interviews/0005-food-beverage-cross-department.md
+          - "0006: Validation and Prioritization": project/interviews/0006-validation-prioritization.md
   - Architecture Decision Records:
       - Overview: adr/index.md
       - "ADR 0001: Use a Monorepo": adr/0001-use-a-monorepo.md
