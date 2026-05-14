@@ -34,15 +34,16 @@ Primary domain stakeholders represent the core operational workflows that the sy
 
 ### Secondary or Future Domain Stakeholders
 
-Secondary stakeholders may become relevant later, but they should not drive the initial implementation.
+Secondary stakeholders may be relevant for early discovery, but they should not drive the initial implementation.
 
-| Stakeholder               | Main interest                                                                    |
-| ------------------------- | -------------------------------------------------------------------------------- |
-| Maintenance staff         | Rooms out of service, repair tasks, and impact on availability                   |
-| Staff scheduler           | Shift planning, workload balance, staff availability, and assignment constraints |
-| Revenue manager           | Occupancy, pricing, forecasting, and overbooking strategy                        |
-| External booking channels | Integration boundaries, inventory synchronization, and booking updates           |
-| Accounting / finance      | Invoicing, payment reconciliation, taxes, and financial reporting                |
+| Stakeholder               | Main interest                                                                                           |
+| ------------------------- | ------------------------------------------------------------------------------------------------------- |
+| Group reservations / Resa | Group bookings, room blocks, email-driven requests, booking changes, and coordination with front office |
+| Maintenance staff         | Rooms out of service, repair tasks, and impact on availability                                          |
+| Staff scheduler           | Shift planning, workload balance, staff availability, and assignment constraints                        |
+| Revenue manager           | Occupancy, pricing, forecasting, and overbooking strategy                                               |
+| External booking channels | Integration boundaries, inventory synchronization, and booking updates                                  |
+| Accounting / finance      | Invoicing, payment reconciliation, taxes, and financial reporting                                       |
 
 ### Project Stakeholders
 
@@ -70,27 +71,28 @@ Operational stakeholders represent concerns that would matter when running or re
 
 This classification helps decide how much each stakeholder perspective should influence early project work.
 
-| Stakeholder                  |      Interest |     Influence | Engagement approach                                                                |
-| ---------------------------- | ------------: | ------------: | ---------------------------------------------------------------------------------- |
-| Maintainer / portfolio owner |          High |          High | Drives project direction, scope, quality bar, and prioritization                   |
-| Reception staff              |          High |        Medium | Core workflow perspective for booking, availability, and room state                |
-| Housekeeping staff           |          High |        Medium | Core workflow perspective for room readiness and task flow                         |
-| Hotel management             |          High |        Medium | Provides reporting, staffing, and operational visibility concerns                  |
-| Senior engineer reviewers    |          High |        Medium | Require visible architecture reasoning, trade-offs, and measurements               |
-| System operator              |          High |        Medium | Drives observability, deployment, reliability, and runbook concerns                |
-| Operations coordinator       |        Medium |        Medium | Connects cross-team workflow and escalation concerns                               |
-| Night shift staff            |        Medium |        Medium | Introduces reconciliation, scheduled jobs, date boundaries, and reporting concerns |
-| Recruiters / hiring managers |        Medium |        Medium | Need clear project story, accessible README, and understandable demo value         |
-| Future contributors          |        Medium |           Low | Need documentation, local setup, tests, and contribution guidance                  |
-| Demo users                   |        Medium |           Low | Need a fast path to understand and inspect the system                              |
-| Guests                       |        Medium |           Low | Represent service expectations, but are not direct system users initially          |
-| Data/privacy stakeholder     |        Medium |           Low | Ensures safe, generalized, and synthetic data use                                  |
-| Security reviewer            |        Medium |           Low | Ensures secure defaults and clear auth boundaries as they evolve                   |
-| Maintenance staff            | Low initially | Low initially | Relevant when out-of-service room workflows are modeled                            |
-| Staff scheduler              |  Medium later |  Medium later | Relevant when staff scheduling becomes an active workstream                        |
-| Revenue manager              | Low initially | Low initially | Relevant for later pricing or forecasting work                                     |
-| External booking channels    | Low initially | Low initially | Relevant for integration design, but out of initial scope                          |
-| Accounting / finance         | Low initially | Low initially | Relevant for real products, but payments and invoicing are out of scope            |
+| Stakeholder                  |      Interest |     Influence | Engagement approach                                                                   |
+| ---------------------------- | ------------: | ------------: | ------------------------------------------------------------------------------------- |
+| Maintainer / portfolio owner |          High |          High | Drives project direction, scope, quality bar, and prioritization                      |
+| Reception staff              |          High |        Medium | Core workflow perspective for booking, availability, and room state                   |
+| Housekeeping staff           |          High |        Medium | Core workflow perspective for room readiness and task flow                            |
+| Hotel management             |          High |        Medium | Provides reporting, staffing, and operational visibility concerns                     |
+| Senior engineer reviewers    |          High |        Medium | Require visible architecture reasoning, trade-offs, and measurements                  |
+| System operator              |          High |        Medium | Drives observability, deployment, reliability, and runbook concerns                   |
+| Operations coordinator       |        Medium |        Medium | Connects cross-team workflow and escalation concerns                                  |
+| Night shift staff            |        Medium |        Medium | Introduces reconciliation, scheduled jobs, date boundaries, and reporting concerns    |
+| Group reservations / Resa    |        Medium |        Medium | Important for understanding group bookings, room blocks, and availability assumptions |
+| Recruiters / hiring managers |        Medium |        Medium | Need clear project story, accessible README, and understandable demo value            |
+| Future contributors          |        Medium |           Low | Need documentation, local setup, tests, and contribution guidance                     |
+| Demo users                   |        Medium |           Low | Need a fast path to understand and inspect the system                                 |
+| Guests                       |        Medium |           Low | Represent service expectations, but are not direct system users initially             |
+| Data/privacy stakeholder     |        Medium |           Low | Ensures safe, generalized, and synthetic data use                                     |
+| Security reviewer            |        Medium |           Low | Ensures secure defaults and clear auth boundaries as they evolve                      |
+| Maintenance staff            | Low initially | Low initially | Relevant when out-of-service room workflows are modeled                               |
+| Staff scheduler              |  Medium later |  Medium later | Relevant when staff scheduling becomes an active workstream                           |
+| Revenue manager              | Low initially | Low initially | Relevant for later pricing or forecasting work                                        |
+| External booking channels    | Low initially | Low initially | Relevant for integration design, but out of initial scope                             |
+| Accounting / finance         | Low initially | Low initially | Relevant for real products, but payments and invoicing are out of scope               |
 
 ## Key Stakeholder Relationships and Tensions
 
@@ -99,6 +101,7 @@ Stakeholder relationships reveal where requirements and architecture trade-offs 
 | Relationship                                     | Tension or coordination need                                                                                       | Engineering implication                                                        |
 | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
 | Reception staff ↔ Guests                         | Guests expect fast check-in and correct booking information; reception needs reliable availability and room status | Booking correctness, fast availability search, clear room state model          |
+| Group reservations / Resa ↔ Reception staff      | Group bookings and changes affect availability, room planning, and guest arrival preparation                       | Reservation holds, room blocks, booking state model, availability assumptions  |
 | Reception staff ↔ Housekeeping staff             | Reception needs rooms ready; housekeeping needs realistic priorities and workload visibility                       | Room lifecycle states, housekeeping task workflow, operational dashboard       |
 | Reception staff ↔ Night audit staff              | Late arrivals, no-shows, and date-boundary operations must be handled consistently                                 | Scheduled jobs, booking state transitions, audit trail, reconciliation reports |
 | Housekeeping staff ↔ Operations coordinator      | Tasks may need reprioritization during high occupancy or staff shortages                                           | Task prioritization, reassignment, workflow visibility                         |
@@ -114,6 +117,7 @@ Stakeholder relationships reveal where requirements and architecture trade-offs 
 This analysis creates several high-level implications.
 
 - Booking, availability, room state, and housekeeping should be treated as core early domain areas.
+- Group reservations should be explored early because it affects booking and availability assumptions, but implementation should remain later scope.
 - Staff scheduling, maintenance, revenue management, accounting, and external integrations should remain secondary or future concerns.
 - The project should explicitly balance domain realism with portfolio feasibility.
 - Documentation should make stakeholder-driven decisions visible without pretending to be a commercial rollout.
