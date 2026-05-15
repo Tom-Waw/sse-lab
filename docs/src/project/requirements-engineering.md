@@ -39,6 +39,14 @@ Requirements must not be based on:
 - real guest or employee data;
 - reverse-engineered vendor behavior.
 
+## Interview Findings
+
+Interview transcripts are private and are not stored in the repository.
+
+Each interview artifact may contain generalized findings after the conversation has been processed. These findings are source-near notes, not committed requirements.
+
+Cross-interview synthesis, requirement candidates, roadmap items, and architecture decisions are derived only after findings from multiple perspectives have been compared.
+
 ## Requirements Workflow
 
 Requirements should follow a lightweight workflow:
