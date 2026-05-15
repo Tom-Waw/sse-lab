@@ -10,8 +10,3 @@ Each ADR should explain:
 - the current status of the decision.
 
 ADRs should be concise but specific enough that a future reader can understand why the decision was made.
-
-## Records
-
-- [ADR 0001: Use a Monorepo](0001-use-a-monorepo.md)
-- [ADR 0002: Select Hospitality Operations as Initial System Domain](0002-select-initial-system-domain.md)
